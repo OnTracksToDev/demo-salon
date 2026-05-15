@@ -490,21 +490,19 @@
   </script>
 
   <!-- COLLER LE SCRIPT VOICEFLOW ICI -->
-  <script type="text/javascript">
-    (function (d, t) {
+<script type="text/javascript">
+  (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function () {
+      v.onload = function() {
         window.voiceflow.chat.load({
           verify: { projectID: '6a077c89122a952987c6c3d7' },
           url: 'https://general-runtime.voiceflow.com',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          }
+          versionID: 'production' // Force la version publiée avec tes couleurs
         });
       }
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
+  })(document, 'script');
+</script>
 </body>
 
 </html>

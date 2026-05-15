@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +8,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet" />
 
   <style>
     :root {
       --cream: #FDFBF7;
-      --ink:   #1A1A1A;
-      --gold:  #C5A059;
+      --ink: #1A1A1A;
+      --gold: #C5A059;
       --gold-light: #D4AF37;
       --muted: #8A8178;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       background-color: var(--cream);
@@ -29,7 +34,9 @@
     }
 
     /* ── Typographie ── */
-    .serif { font-family: 'Cormorant Garamond', serif; }
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
 
     /* ── Grain de papier en arrière-plan ── */
     body::before {
@@ -55,12 +62,14 @@
     /* ── Navigation ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 50;
-      background: rgba(253,251,247,.88);
+      background: rgba(253, 251, 247, .88);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(212,175,55,.18);
+      border-bottom: 1px solid rgba(212, 175, 55, .18);
     }
 
     /* ── Hero ── */
@@ -84,6 +93,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .btn-primary::after {
       content: '';
       position: absolute;
@@ -91,47 +101,60 @@
       background: var(--gold);
       transform: scaleX(0);
       transform-origin: right;
-      transition: transform .4s cubic-bezier(.77,0,.18,1);
+      transition: transform .4s cubic-bezier(.77, 0, .18, 1);
       z-index: -1;
     }
+
     .btn-primary:hover {
       color: var(--ink);
       border-color: var(--gold);
       letter-spacing: .22em;
     }
-    .btn-primary:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .btn-primary:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
     /* ── Cartes Prestations ── */
     .card {
-      border: 1px solid rgba(197,160,89,.25);
-      background: rgba(253,251,247,.6);
+      border: 1px solid rgba(197, 160, 89, .25);
+      background: rgba(253, 251, 247, .6);
       transition: border-color .35s, box-shadow .35s, transform .35s;
       position: relative;
       overflow: hidden;
     }
+
     .card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 2px;
       height: 0;
       background: var(--gold);
-      transition: height .45s cubic-bezier(.77,0,.18,1);
+      transition: height .45s cubic-bezier(.77, 0, .18, 1);
     }
+
     .card:hover {
-      border-color: rgba(197,160,89,.6);
-      box-shadow: 0 12px 40px rgba(0,0,0,.06);
+      border-color: rgba(197, 160, 89, .6);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .06);
       transform: translateY(-3px);
     }
-    .card:hover::before { height: 100%; }
+
+    .card:hover::before {
+      height: 100%;
+    }
 
     /* ── Section Infos ── */
     .info-block {
-      border-top: 1px solid rgba(197,160,89,.3);
+      border-top: 1px solid rgba(197, 160, 89, .3);
     }
 
     /* ── Footer ligne or ── */
-    footer { border-top: 1px solid rgba(197,160,89,.2); }
+    footer {
+      border-top: 1px solid rgba(197, 160, 89, .2);
+    }
 
     /* ── Chat Bubble ── */
     .chat-bubble {
@@ -146,21 +169,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 28px rgba(0,0,0,.22), 0 0 0 1px rgba(212,175,55,.35);
+      box-shadow: 0 6px 28px rgba(0, 0, 0, .22), 0 0 0 1px rgba(212, 175, 55, .35);
       cursor: pointer;
       transition: transform .3s, box-shadow .3s;
       animation: float 3.8s ease-in-out infinite;
     }
+
     .chat-bubble:hover {
       transform: scale(1.08);
-      box-shadow: 0 10px 36px rgba(0,0,0,.3), 0 0 0 2px rgba(212,175,55,.5);
+      box-shadow: 0 10px 36px rgba(0, 0, 0, .3), 0 0 0 2px rgba(212, 175, 55, .5);
     }
-    .chat-bubble svg { width: 24px; height: 24px; color: white; }
+
+    .chat-bubble svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
 
     .online-dot {
       position: absolute;
-      top: 4px; right: 4px;
-      width: 11px; height: 11px;
+      top: 4px;
+      right: 4px;
+      width: 11px;
+      height: 11px;
       background: #4CAF50;
       border-radius: 50%;
       border: 2px solid var(--cream);
@@ -168,13 +199,29 @@
     }
 
     @keyframes pulse-dot {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50%       { transform: scale(1.25); opacity: .75; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.25);
+        opacity: .75;
+      }
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-6px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
     }
 
     /* ── Tooltip "Un conseiller vous répond" ── */
@@ -195,34 +242,73 @@
       pointer-events: none;
       transition: opacity .3s;
     }
+
     .chat-tooltip::after {
       content: '';
       position: absolute;
-      right: -6px; top: 50%;
+      right: -6px;
+      top: 50%;
       transform: translateY(-50%);
       border: 6px solid transparent;
       border-left-color: var(--ink);
       border-right: 0;
     }
-    .chat-bubble:hover .chat-tooltip { opacity: 1; }
+
+    .chat-bubble:hover .chat-tooltip {
+      opacity: 1;
+    }
 
     /* ── Animations d'entrée ── */
     @keyframes fade-up {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .fade-up { animation: fade-up .9s cubic-bezier(.22,1,.36,1) both; }
-    .delay-1 { animation-delay: .15s; }
-    .delay-2 { animation-delay: .3s; }
-    .delay-3 { animation-delay: .45s; }
-    .delay-4 { animation-delay: .6s; }
-    .delay-5 { animation-delay: .75s; }
+
+    .fade-up {
+      animation: fade-up .9s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .delay-1 {
+      animation-delay: .15s;
+    }
+
+    .delay-2 {
+      animation-delay: .3s;
+    }
+
+    .delay-3 {
+      animation-delay: .45s;
+    }
+
+    .delay-4 {
+      animation-delay: .6s;
+    }
+
+    .delay-5 {
+      animation-delay: .75s;
+    }
 
     /* ── Scroll reveal ── */
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s, transform .7s; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body class="relative overflow-x-hidden">
 
   <!-- ═══════════════════════════════════════════
@@ -246,17 +332,19 @@
     </div>
 
     <h1 class="serif fade-up delay-1 text-5xl sm:text-6xl font-light italic leading-tight text-[var(--ink)] mb-2">
-      L'Atelier<br/>Signature
+      L'Atelier<br />Signature
     </h1>
 
-    <p class="fade-up delay-2 serif text-lg sm:text-xl font-light italic text-[var(--muted)] mt-4 mb-8 max-w-xs leading-relaxed">
-      L'art capillaire<br/>et le soin d'exception.
+    <p
+      class="fade-up delay-2 serif text-lg sm:text-xl font-light italic text-[var(--muted)] mt-4 mb-8 max-w-xs leading-relaxed">
+      L'art capillaire<br />et le soin d'exception.
     </p>
 
     <a href="#" class="btn-primary fade-up delay-3">Prendre Rendez-vous</a>
 
     <!-- Scroll indicator -->
-    <div class="fade-up delay-4 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+    <div
+      class="fade-up delay-4 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
       <span class="uppercase tracking-[.25em] text-[.55rem] text-[var(--muted)]">Découvrir</span>
       <div class="w-px h-8 bg-[var(--gold)] opacity-60 animate-bounce"></div>
     </div>
@@ -313,7 +401,8 @@
           <span class="serif text-[var(--gold)] text-xl font-light">140€</span>
         </div>
         <p class="text-[var(--muted)] text-sm leading-relaxed">
-          Une palette de teintes exclusives créées pour vous. De la nuance subtile à la couleur affirmée, un résultat unique.
+          Une palette de teintes exclusives créées pour vous. De la nuance subtile à la couleur affirmée, un résultat
+          unique.
         </p>
       </div>
     </div>
@@ -355,7 +444,8 @@
         </div>
 
         <!-- Contact -->
-        <div class="p-7 border-r border-[rgba(197,160,89,.25)] col-span-2 sm:col-span-1 reveal" style="transition-delay:.15s">
+        <div class="p-7 border-r border-[rgba(197,160,89,.25)] col-span-2 sm:col-span-1 reveal"
+          style="transition-delay:.15s">
           <p class="uppercase tracking-widest text-[.58rem] text-[var(--gold)] mb-3">Contact</p>
           <p class="text-[var(--muted)] text-sm">+33 1 42 00 00 00</p>
           <p class="text-[var(--muted)] text-sm mt-1">contact@atelier-signature.fr</p>
@@ -400,10 +490,10 @@
   </script>
 
   <!-- COLLER LE SCRIPT VOICEFLOW ICI -->
-   <script type="text/javascript">
-  (function(d, t) {
+  <script type="text/javascript">
+    (function (d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
+      v.onload = function () {
         window.voiceflow.chat.load({
           verify: { projectID: '6a077c89122a952987c6c3d7' },
           url: 'https://general-runtime.voiceflow.com',
@@ -413,7 +503,8 @@
         });
       }
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+    })(document, 'script');
+  </script>
 </body>
+
 </html>
